@@ -1,0 +1,203 @@
+================================================================================
+XGBOOST CHURN PREDICTION MODEL & RETENTION STRATEGY REPORT
+================================================================================
+Analysis Date: 2025-11-26 11:27:41
+
+
+================================================================================
+1. MODEL EVALUATION METRICS
+================================================================================
+   Metric    Value
+ Accuracy 0.792051
+Precision 0.631922
+   Recall 0.518717
+ F1 Score 0.569750
+      AUC 0.835618
+
+
+================================================================================
+2. TOP 15 FEATURE IMPORTANCE
+================================================================================
+            Feature  Importance
+           Contract    0.341817
+     OnlineSecurity    0.082099
+    InternetService    0.079043
+        TenureGroup    0.054614
+        RiskSegment    0.054103
+        TechSupport    0.052635
+             tenure    0.024279
+    StreamingMovies    0.020610
+   PaperlessBilling    0.020327
+MonthlyChargesGroup    0.019896
+  TotalChargesGroup    0.019855
+     MonthlyCharges    0.019545
+      MultipleLines    0.018933
+       TotalCharges    0.018390
+       OnlineBackup    0.017706
+
+
+================================================================================
+3. SEGMENT-BASED CHURN ANALYSIS
+================================================================================
+
+Tenure:
+--------------------------------------------------------------------------------
+             Actual_Churn_Rate  Avg_Churn_Probability  Avg_Monthly_Charges  Customer_Count
+TenureGroup                                                                               
+0-12                    0.4768                 0.4742              56.1720            2175
+13-24                   0.2871                 0.2886              61.3573            1024
+25-36                   0.2163                 0.2127              65.5755             832
+37-48                   0.1903                 0.1872              66.3182             762
+49-60                   0.1442                 0.1471              70.5508             832
+61+                     0.0661                 0.0689              75.9527            1407
+
+
+Contract:
+--------------------------------------------------------------------------------
+                Actual_Churn_Rate  Avg_Churn_Probability  Avg_Monthly_Charges  Customer_Count
+Contract                                                                                     
+Month-to-month             0.4271                 0.4273              66.3985            3875
+One year                   0.1127                 0.1079              65.0486            1473
+Two year                   0.0283                 0.0303              60.7704            1695
+
+
+MonthlyCharges:
+--------------------------------------------------------------------------------
+                     Actual_Churn_Rate  Avg_Churn_Probability  Avg_Monthly_Charges  Customer_Count
+MonthlyChargesGroup                                                                               
+0-30                            0.0980                 0.0966              21.5035            1653
+30-50                           0.3080                 0.3017              42.7937             646
+50-70                           0.2076                 0.2061              59.9692            1161
+70-90                           0.3780                 0.3743              80.0601            1844
+90+                             0.3278                 0.3346             101.0187            1739
+
+
+InternetService:
+--------------------------------------------------------------------------------
+                 Actual_Churn_Rate  Avg_Churn_Probability  Avg_Monthly_Charges  Customer_Count
+InternetService                                                                               
+DSL                         0.1896                 0.1887              58.1022            2421
+Fiber optic                 0.4189                 0.4200              91.5001            3096
+No                          0.0740                 0.0714              21.0792            1526
+
+
+RiskSegment:
+--------------------------------------------------------------------------------
+             Actual_Churn_Rate  Avg_Churn_Probability  Avg_Monthly_Charges  Customer_Count
+RiskSegment                                                                               
+High                    0.5194                 0.5166              58.0223            1908
+Low                     0.0676                 0.0664              62.7596            3168
+Medium                  0.3376                 0.3407              74.5235            1967
+
+
+================================================================================
+4. RETENTION STRATEGY BY SEGMENT
+================================================================================
+
+
+Segment 1: Month-to-Month, Low Tenure (<12 months)
+--------------------------------------------------------------------------------
+Customer Count: 806
+Average Churn Probability: 77.62%
+Monthly Revenue At Risk: $60,792.25
+
+Strategy: Offer 1-year contract with 10-15% discount
+
+Action Items:
+  • Proactive outreach within first 3 months
+  • Offer loyalty discount for contract conversion
+  • Assign dedicated retention specialist
+  • Provide onboarding support package
+
+Expected Impact: Reduce churn by 30-40%
+Cost per Customer: $15-20/month discount
+ROI: High - Early intervention prevents long-term loss
+
+Segment 2: High Value, Month-to-Month
+--------------------------------------------------------------------------------
+Customer Count: 910
+Average Churn Probability: 75.59%
+Monthly Revenue At Risk: $80,027.70
+
+Strategy: Convert to annual contract with premium benefits
+
+Action Items:
+  • Offer 2-year contract with 20% discount
+  • Provide premium service add-ons
+  • Priority customer service access
+  • Exclusive loyalty rewards program
+
+Expected Impact: Reduce churn by 50-60%
+Cost per Customer: $20-30/month discount
+ROI: Very High - High-value customers worth retaining
+
+Segment 3: Fiber Optic, High Churn Risk
+--------------------------------------------------------------------------------
+Customer Count: 963
+Average Churn Probability: 76.06%
+Monthly Revenue At Risk: $83,949.20
+
+Strategy: Improve service quality and add value
+
+Action Items:
+  • Service quality audit and improvement
+  • Offer speed upgrade or price match
+  • Add complementary services (security, backup)
+  • Proactive technical support
+
+Expected Impact: Reduce churn by 25-35%
+Cost per Customer: $10-15/month in service improvements
+ROI: Medium-High - Address root cause of dissatisfaction
+
+Segment 4: Low Service Engagement, High Risk
+--------------------------------------------------------------------------------
+Customer Count: 572
+Average Churn Probability: 75.32%
+Monthly Revenue At Risk: $39,503.95
+
+Strategy: Increase service stickiness
+
+Action Items:
+  • Offer bundled services at discounted rate
+  • Free trial of premium services (Security, Backup)
+  • Educational content on service benefits
+  • Referral program incentives
+
+Expected Impact: Reduce churn by 20-30%
+Cost per Customer: $5-10/month in bundled discounts
+ROI: Medium - Increases customer lifetime value
+
+Segment 5: Streaming Services Users, High Risk
+--------------------------------------------------------------------------------
+Customer Count: 740
+Average Churn Probability: 75.40%
+Monthly Revenue At Risk: $65,484.80
+
+Strategy: Enhance streaming experience
+
+Action Items:
+  • Improve streaming quality and reliability
+  • Offer exclusive content or partnerships
+  • Bundle streaming with other services
+  • Provide streaming device discounts
+
+Expected Impact: Reduce churn by 15-25%
+Cost per Customer: $8-12/month in improvements
+ROI: Medium - Addresses specific pain point
+
+================================================================================
+5. SUMMARY & RECOMMENDATIONS
+================================================================================
+
+Total High-Risk Customers: 1,124
+Total Monthly Revenue At Risk: $90,544.00
+Annual Revenue At Risk: $1,086,528.00
+
+Key Recommendations:
+1. Prioritize Month-to-Month customers with low tenure for immediate intervention
+2. Focus on high-value customers (>$70/month) for contract conversion
+3. Address service quality issues for Fiber Optic customers
+4. Increase service engagement for customers with low service count
+5. Implement proactive retention campaigns based on churn probability thresholds
+6. Monitor model performance monthly and retrain quarterly
+
